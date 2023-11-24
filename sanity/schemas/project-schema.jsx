@@ -1,3 +1,5 @@
+import { editorStyles } from "../editor-styles";
+
 const project = {
   title: "Projects",
   name: "project",
@@ -42,38 +44,37 @@ const project = {
       type: "url",
     },
     {
-      title: "Lead",
-      name: "lead",
-      type: "array",
-      of: [{ type: "block" }],
-    },
-    {
       title: "Content",
       name: "content",
       type: "array",
-      of: [{ type: "block" }],
-    },
-    {
-      title: 'Gallery',
-      name: 'gallery',
-      type: 'array',
       of: [
         {
-          type: 'object',
+          type: "block",
+          styles: editorStyles,
+        },
+      ],
+    },
+    {
+      title: "Gallery",
+      name: "gallery",
+      type: "array",
+      of: [
+        {
+          type: "object",
           fields: [
             {
-              name: 'image',
-              title: 'Image',
-              type: 'image',
+              name: "image",
+              title: "Image",
+              type: "image",
               options: {
                 hotspot: true, // Optional, depends on your image requirements
               },
             },
             {
-              name: 'caption',
-              title: 'Caption',
-              type: 'string',
-              description: 'Optional caption for the image',
+              name: "caption",
+              title: "Caption",
+              type: "string",
+              description: "Optional caption for the image",
             },
           ],
         },

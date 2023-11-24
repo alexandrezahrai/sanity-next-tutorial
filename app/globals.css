@@ -17,3 +17,28 @@ main {
 .balance-text {
   text-wrap: balance;
 }
+
+/* Typography */
+.heading-1 {
+  @apply text-5xl lg:text-6xl font-extrabold;
+}
+
+.heading-2 {
+  @apply text-4xl lg:text-5xl font-extrabold;
+}
+
+.heading-3 {
+  @apply text-3xl lg:text-4xl font-bold;
+}
+
+.eyebrow {
+  @apply text-base font-bold uppercase tracking-[0.2em];
+}
+
+.large-text {
+  @apply text-[22px] lg:text-[24px] leading-[1.6];
+}
+
+.base-text {
+  @apply text-[18px] leading-[1.8];
+}

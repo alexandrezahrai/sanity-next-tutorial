@@ -1,16 +1,15 @@
 import { getProject } from "@/sanity/sanity-utils";
 import { PortableText } from "@portabletext/react";
+import { components } from "../../components/PortableTextComponents";
 import Image from "next/image";
 
 export default async function Project({ params }) {
   const slug = params.project;
-  console.log(slug);
 
   const project = await getProject(slug);
-  console.log(project);
 
   const gallery = project.gallery;
-  console.log(gallery);
+
   // Parse the _createdAt value
   const createdAtDate = new Date(project._createdAt);
   // Format the date as 'Month day, year'
@@ -19,7 +18,6 @@ export default async function Project({ params }) {
     day: "numeric",
     year: "numeric",
   });
-  console.log(formattedDate);
 
   return (
     <section className="container py-10 md:py-[60px] lg:py-20">
@@ -49,11 +47,8 @@ export default async function Project({ params }) {
           ) : null}
         </figure>
 
-        <div className="text-[22px] lg:text-[24px] leading-[1.6] text-gray-400 mb-6">
-          <PortableText value={project.lead} />
-        </div>
-        <div className="text-[18px] leading-[1.8] text-gray-400 mb-6">
-          <PortableText value={project.content} />
+        <div className="mb-6">
+          <PortableText value={project.content} components={components} />
         </div>
 
         {gallery ? (
