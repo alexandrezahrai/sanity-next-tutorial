@@ -5,7 +5,7 @@ export default async function Home() {
   const projects = await getProjects();
   const pages = await getPages();
 
-  console.log(pages)
+  console.log(pages);
 
   return (
     <section className="container py-10 md:py-[60px] lg:py-20">

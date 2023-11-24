@@ -6,23 +6,66 @@ export async function getPages() {
     groq`*[_type == "page"]{
       _id,
       _createdAt,
-      title, 
+      title,
       "slug": slug.current,
+      copy,
+      pageBuilder[]{
+        _type == "hero" => {
+          _type,
+          heading,
+          tagline,
+          "image": image.asset->url,
+        },
+        _type == "video" => {
+          _type,
+          videoLabel,
+          url
+        },
+        _type == "gallery" => {
+          _type,
+          "images": images[]->{
+            alt,
+            image
+          },
+        }
+      },
     }`
   );
 }
 
 export async function getPage(slug) {
-  return createClient(clientConfig).fetch(
-    groq`*[_type == "page" && slug.current == $slug][0]{
+  const [page] = await createClient(clientConfig).fetch(
+    groq`*[_type == "page" && slug.current == $slug]{
       _id,
       _createdAt,
-      title, 
+      title,
       "slug": slug.current,
-      copy
+      copy,
+      pageBuilder[]{
+        _type == "hero" => {
+          _type,
+          heading,
+          tagline,
+          "image": image.asset->url,
+        },
+        _type == "video" => {
+          _type,
+          videoLabel,
+          url
+        },
+        _type == "gallery" => {
+          _type,
+          "images": images[]{
+            alt,
+            "asset": asset->  // This fetches the asset details
+          },
+        }
+      },
     }`,
     { slug }
   );
+
+  return page;
 }
 
 export async function getProjects() {

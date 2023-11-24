@@ -13,3 +13,7 @@ body {
 main {
   flex-grow: 1;
 }
+
+.balance-text {
+  text-wrap: balance;
+}
