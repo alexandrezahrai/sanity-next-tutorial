@@ -7,6 +7,7 @@ import config from "@/sanity/config/client-config";
 import { PortableText } from "@portabletext/react";
 import { components } from "../components/PortableTextComponents";
 import ProjectCard from "../components/ProjectCard";
+import Section from "../components/Section";
 
 // Create a builder that can be used to create URLs
 const builder = imageUrlBuilder(config);
@@ -26,7 +27,7 @@ export default async function Page({ params }) {
   const heroHeading = page.heading;
 
   return (
-    <section className="container py-10 md:py-[60px] lg:py-20">
+    <Section padding="py-10 md:py-[60px] lg:py-20">
       {pageTitle && (
         <HeroSection
           src={page?.hero?.image ? urlFor(page.hero.image).url() : undefined}
@@ -130,6 +131,6 @@ export default async function Page({ params }) {
           })}
         </div>
       )}
-    </section>
+    </Section>
   );
 }

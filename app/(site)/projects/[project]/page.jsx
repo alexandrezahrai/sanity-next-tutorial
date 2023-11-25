@@ -1,6 +1,8 @@
 import { getProject } from "@/sanity/sanity-utils";
 import { PortableText } from "@portabletext/react";
 import { components } from "../../components/PortableTextComponents";
+import Section from "../../components/Section";
+import Heading from "../../components/Heading";
 import Image from "next/image";
 
 export default async function Project({ params }) {
@@ -20,12 +22,10 @@ export default async function Project({ params }) {
   });
 
   return (
-    <section className="container py-10 md:py-[60px] lg:py-20">
+    <Section padding="py-10 md:py-[60px] lg:py-20">
       <article className="mx-auto w-full max-w-3xl">
         <header>
-          <h1 className="mb-4 text-3xl font-bold leading-tight lg:text-4xl">
-            {project.name}
-          </h1>
+          <Heading tag="h1" style="heading-2 mb-4" label={project.name} />
           <address>
             <p className="text-gray-400 mb-6 lg:mb-8">
               Published on {formattedDate}
@@ -92,6 +92,6 @@ export default async function Project({ params }) {
           </div>
         ) : null}
       </article>
-    </section>
+    </Section>
   );
 }

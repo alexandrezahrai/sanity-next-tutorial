@@ -1,3 +1,7 @@
-export default function Section({ children }) {
-  return <section className="container">{children}</section>;
+export default function Section({ children, padding }) {
+  return (
+    <section className={`container ${padding ? padding : ""}`}>
+      {children}
+    </section>
+  );
 }
