@@ -1,4 +1,6 @@
 import Head from "next/head";
+import Link from "next/link";
+import { ArrowUturnLeftIcon } from "@heroicons/react/24/solid";
 import "../globals.css";
 
 export const metadata = {
@@ -13,7 +15,20 @@ export default function RootLayout({ children }) {
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
       </Head>
-      <body>{children}</body>
+      <body>
+        <header>
+          <div className="flex items-center justify-between p-5 bg-[#101112]">
+            <Link
+              href="/"
+              className="flex items-center text-[#2563eb] hover:text-[#3b82f6] transition-colors duration-200 ease-in"
+            >
+              <ArrowUturnLeftIcon className="h-6 w-6 mr-2" />
+              Go to Website
+            </Link>
+          </div>
+        </header>
+        <main>{children}</main>
+      </body>
     </html>
   );
 }
