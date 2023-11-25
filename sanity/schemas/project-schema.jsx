@@ -24,6 +24,7 @@ const project = {
       type: "image",
       options: {
         hotspot: true, // <-- Defaults to false
+        collapsible: true,
       },
       fields: [
         {

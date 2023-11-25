@@ -6,8 +6,8 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  @apply bg-gray-900;
-  @apply text-white;
+  @apply bg-gradient-to-br from-[#101112] to-gray-800;
+  @apply text-slate-100;
 }
 
 main {

@@ -6,7 +6,7 @@ export default function ProjectCard({ href, src, alt, name, content }) {
   return (
     <Link
       href={href}
-      className="shadow-sm rounded-xl bg-slate-900 border border-gray-700 shadow-slate-700/[.7] overflow-hidden"
+      className="shadow-sm rounded-xl bg-gradient-to-bl from-[#101112] to-slate-800 border border-gray-700 shadow-slate-700/[.7] overflow-hidden"
     >
       <Image
         src={src}

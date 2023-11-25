@@ -5,12 +5,12 @@ const heroType = {
   type: "object",
   title: "Hero",
   fields: [
-    { name: "heading", type: "string" },
+    { name: "heading", type: "string", description: "If this field is left blank then the page title will be used in its place." },
     { name: "tagline", type: "string" },
     {
       name: "image",
       type: "image",
-      description: "This image will be used as the background for this section.",
+      description: "This image will be used as the background for this section. If no image is selected, the default background color will be used.",
       options: { hotspot: true },
     },
   ],

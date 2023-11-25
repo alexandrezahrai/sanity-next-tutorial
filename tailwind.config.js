@@ -6,11 +6,13 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: {
+      sm: "576px", // => @media (min-width: 576px) { ... }
+      md: "760px",
+      lg: "992px",
+      xl: "1200px",
+    },
     extend: {
-      screens: {
-        lg: "992px",
-        xl: "1440px",
-      },
       container: {
         center: true,
         padding: {

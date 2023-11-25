@@ -10,7 +10,7 @@ const globalSettings = {
     },
     {
       name: "contact",
-      title: "Contact",
+      title: "Contact & Social",
     },
     {
       name: "all-fields",
@@ -21,7 +21,7 @@ const globalSettings = {
     {
       name: "title",
       type: "string",
-      title: "Title",
+      title: "Website Title",
       group: "seo",
     },
     {
@@ -53,6 +53,24 @@ const globalSettings = {
       name: "email",
       type: "string",
       title: "Email",
+      group: "contact",
+    },
+    {
+      name: "socialLinks",
+      type: "object",
+      title: "Social Links",
+      fields: [
+        {
+          name: "linkedin",
+          type: "string",
+          title: "LinkedIn",
+        },
+        {
+          name: "twitter",
+          type: "string",
+          title: "Twitter",
+        },
+      ],
       group: "contact",
     },
   ],

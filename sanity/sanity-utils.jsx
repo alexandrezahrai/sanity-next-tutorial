@@ -8,7 +8,7 @@ export async function getPages() {
       _createdAt,
       title,
       "slug": slug.current,
-      copy,
+      hero,
       pageBuilder[]{
         _type == "hero" => {
           _type,
@@ -27,6 +27,10 @@ export async function getPages() {
             alt,
             image
           },
+        },
+        _type == "content" => {
+          _type,
+          editor
         }
       },
     }`
@@ -40,7 +44,7 @@ export async function getPage(slug) {
       _createdAt,
       title,
       "slug": slug.current,
-      copy,
+      hero,
       pageBuilder[]{
         _type == "hero" => {
           _type,
@@ -59,6 +63,10 @@ export async function getPage(slug) {
             alt,
             "asset": asset->  // This fetches the asset details
           },
+        },
+        _type == "content" => {
+          _type,
+          editor
         }
       },
     }`,
