@@ -1,12 +1,17 @@
 export const editorStyles = [
-  { 
-    title: "Normal", 
-    value: "normal" 
-  },
-  { 
-    title: "Title", 
-    value: "title" 
-  },
+  // { 
+  //   title: "Normal", 
+  //   value: "normal",
+  //   component: (props) => <p className="base-text mb-5 last:mb-0">{props.children}</p>,
+  // },
+  // { 
+  //   title: "Title", 
+  //   value: "title" 
+  // },
+  // { 
+  //   title: "Quote", 
+  //   value: "blockquote" 
+  // },
   {
     title: "H1",
     value: "h1",
@@ -26,10 +31,6 @@ export const editorStyles = [
     title: "Eyebrow",
     value: "eyebrow",
     component: (props) => <span className="eyebrow">{props.children}</span>,
-  },
-  { 
-    title: "Quote", 
-    value: "blockquote" 
   },
   {
     title: "Text Large",
