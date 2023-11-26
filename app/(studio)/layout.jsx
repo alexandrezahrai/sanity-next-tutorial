@@ -17,12 +17,12 @@ export default function RootLayout({ children }) {
       </Head>
       <body>
         <header>
-          <div className="flex items-center justify-between p-5 bg-[#101112]">
+          <div className="flex items-center justify-between p-2 bg-[#101112] border-b border-[#3f434a]">
             <Link
               href="/"
-              className="flex items-center text-[#2563eb] hover:text-[#3b82f6] transition-colors duration-200 ease-in"
+              className="btn !rounded-[4px] !px-3 text-base font-normal flex items-center text-[#2275FB] transition-colors duration-100 ease-in"
             >
-              <ArrowUturnLeftIcon className="h-6 w-6 mr-2" />
+              <ArrowUturnLeftIcon className="h-5 w-5 mr-1" />
               Go to Website
             </Link>
           </div>
