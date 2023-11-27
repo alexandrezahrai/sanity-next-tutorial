@@ -3,7 +3,7 @@ import Heading from "./Heading";
 
 export default function HeroSection({ src, heading, tag }) {
   return (
-    <div className="py-8 px-4 text-center lg:py-16 lg:px-12 relative bg-base-300 border border-gray-700 shadow-slate-700/[.7] overflow-hidden min-h-[500px] flex flex-col justify-center items-center rounded-3xl mb-10 lg:mb-20">
+    <div className="py-8 px-4 text-center lg:py-16 lg:px-12 relative bg-base-300 border border-gray-700 shadow-slate-700/[.7] overflow-hidden min-h-[500px] flex flex-col justify-center items-center rounded-3xl mb-10 lg:mb-20 last:mb-0">
       {src && (
         <>
           <div className="w-full h-full inset-0 absolute">

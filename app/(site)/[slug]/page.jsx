@@ -6,8 +6,8 @@ import imageUrlBuilder from "@sanity/image-url";
 import config from "@/sanity/config/client-config";
 import { PortableText } from "@portabletext/react";
 import { components } from "../components/PortableTextComponents";
-import ProjectCard from "../components/ProjectCard";
 import Section from "../components/Section";
+import ProjectsList from "../components/ProjectsList";
 
 // Create a builder that can be used to create URLs
 const builder = imageUrlBuilder(config);
@@ -23,8 +23,8 @@ export default async function Page({ params }) {
   const sortedPageBuilder =
     page?.pageBuilder && page.pageBuilder.sort((a, b) => a.order - b.order);
 
-  const pageTitle = page.title;
-  const heroHeading = page.heading;
+  const pageTitle = page?.title;
+  const heroHeading = page?.heading;
 
   return (
     <Section padding="py-10 md:py-[60px] lg:py-20">
@@ -36,22 +36,7 @@ export default async function Page({ params }) {
         />
       )}
 
-      {slug === "projects" && (
-        <div className="flex flex-col gap-4 lg:gap-6 md:grid md:grid-cols-2 lg:grid-cols-3 bg-base-300 border rounded-xl shadow-sm p-4 md:p-6 border-gray-700 mb-10 lg:mb-20">
-          {projects.map((project) => {
-            return (
-              <ProjectCard
-                key={project._id}
-                href={`/projects/${project.slug}`}
-                src={project.image}
-                alt={project.name}
-                name={project.name}
-                content={project.content}
-              />
-            );
-          })}
-        </div>
-      )}
+      {slug === "projects" && <ProjectsList />}
 
       {sortedPageBuilder && (
         <div className="flex flex-col gap-10 lg:gap-20">
@@ -59,7 +44,7 @@ export default async function Page({ params }) {
             switch (block._type) {
               case "content":
                 return block.editor ? (
-                  <div>
+                  <div key={index}>
                     <PortableText
                       value={block.editor}
                       components={components}

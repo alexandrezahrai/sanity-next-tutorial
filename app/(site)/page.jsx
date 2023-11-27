@@ -1,6 +1,5 @@
 // Page: 'Home Page'
 import HeroSection from "./components/HeroSection";
-import Heading from "./components/Heading";
 
 export default function Home() {
 

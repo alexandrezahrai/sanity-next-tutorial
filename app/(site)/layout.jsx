@@ -1,6 +1,5 @@
 import "../globals.css";
 import Link from "next/link";
-import Head from "next/head";
 import Footer from "./components/Footer";
 import { getProjects, getPages } from "@/sanity/sanity-utils";
 
@@ -15,10 +14,6 @@ export default async function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <Head>
-        <title>{metadata.title}</title>
-        <meta name="description" content={metadata.description} />
-      </Head>
       <body>
         <header className="bg-base-100">
           <nav className="navbar container">

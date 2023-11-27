@@ -68,7 +68,7 @@ export default async function Project({ params }) {
                     alt="gallery image"
                     width={750}
                     height={100}
-                    className="w-full object-cover object-center"
+                    className="w-full h-full object-cover object-center"
                   />
                   <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                     <a

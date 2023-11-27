@@ -1,4 +1,3 @@
-import Head from "next/head";
 import Link from "next/link";
 import { ArrowUturnLeftIcon } from "@heroicons/react/24/solid";
 import "../globals.css";
@@ -11,10 +10,6 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <Head>
-        <title>{metadata.title}</title>
-        <meta name="description" content={metadata.description} />
-      </Head>
       <body>
         <header>
           <div className="flex items-center justify-between p-2 bg-[#101112] border-b border-[#3f434a]">
